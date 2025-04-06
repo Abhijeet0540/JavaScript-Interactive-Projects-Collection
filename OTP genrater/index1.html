@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OTP Verification Success</title>
+    <link rel="icon" href="https://cdn.iconscout.com/icon/premium/png-512-thumb/verified-5032859-4192094.png?f=webp&w=256"type="image"/>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            font-family: "Matemasie", sans-serif;
+            background-color: #f7f7f7;
+        }
+
+        .container {
+            text-align: center;
+        }
+        .checkmark-circle {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            background-color: #4CAF50;
+            position: relative;
+            margin: 0 auto 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+            /* Ensures that checkmark does not overflow */
+            animation: pop-in 0.3s ease-out;
+        }
+        .checkmark {
+            width: 60px;
+            height: 65px;
+            border: 5px solid #4CAF50;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            animation: draw 0.3s ease-out;
+            font-size: 50px;
+            color: white;
+            animation: checkmark 1s ease-out;
+        }
+        @keyframes draw {
+            0% {
+                width: 0;
+                height: 0;
+                opacity: 1;
+            }
+            50% {
+                width: 50px;
+                height: 25px;
+                opacity: 1;
+            }
+
+            100% {
+                width: 50px;
+                height: 50px;
+                opacity: 1;
+            }
+        }
+
+        @keyframes pop-in {
+            0% {
+                transform: scale(0);
+                opacity: 0;
+            }
+
+            100% {
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
+
+        .message {
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .sub-message {
+            font-size: 16px;
+            color: #555;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 600px) {
+            .checkmark-circle {
+                width: 80px;
+                height: 80px;
+            }
+
+            .checkmark {
+                width: 0;
+                height: 0;
+            }
+
+            .message {
+                font-size: 20px;
+            }
+
+            .sub-message {
+                font-size: 14px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="checkmark-circle">
+            <div class="checkmark">&#10004;</div>
+        </div>
+        <div class="message">Successful!</div>
+        <div class="sub-message">Your OTP has been<br>successfully verified</div>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stopwatch</title>
+</head>
+<style>
+    body {
+        background-image: url(https://images.unsplash.com/photo-1724217552369-22b256e395d9?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D);
+        background-repeat: no-repeat;
+        background-size: cover;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    #stopwatch-container {
+        width: 600px;
+        margin: 10% auto;
+        padding: 5% 0;
+        color: #e7eafb;
+        text-align: center;
+        background-color: #202020;
+        box-shadow: 1px 0px 4px 2px #CFB287;
+        border-radius: 30px;
+    }
+
+    #stopwatch {
+        font-size: 100px;
+        margin-bottom: 10px;
+    }
+
+    button {
+        width: 100px;
+        height: 30px;
+        background-color: #202020;
+        color: white;
+        border-radius: 6px;
+        border: 2px solid #fff;
+        margin-left: 5px;
+        margin-right: 5px;
+    }
+
+    button:hover {
+        background-color: #fff;
+        color: #202020;
+        cursor: pointer;
+    }
+</style>
+
+<body>
+    <div class="container">
+        <div id="stopwatch-container">
+            <h1>Stopwatch using JavaScript</h1>
+            <div id="stopwatch">00:00:00</div>
+            <button onclick="start(true)" id="start-btn">Start</button>
+            <button onclick="pause()">Pause</button>
+            <button onclick="reset()">Reset</button>
+        </div>
+    </div>
+</body>
+<script>
+    let stopwatch = document.getElementById("stopwatch");
+    let startBtn = document.getElementById("start-btn");
+    let timeoutId = null;
+    let ms = 0;
+    let sec = 0;
+    let min = 0;
+
+    function start(flag) {
+        if (flag) {
+            startBtn.disabled = true;
+
+            timeoutId = setTimeout(function () {
+                ms++;
+                // sec += 1;
+                // sec = sec + 1;
+                // sec++;
+                if (ms == 100) {
+                    sec += 1;
+                    ms = 0;
+                }
+                if (sec == 60) {
+                    min += 1;
+                    sec = 0;
+                }
+
+                stopwatch.innerHTML =
+                    (min < 10 ? '0' + min : min) + ':' +
+                    (sec < 10 ? '0' + sec : sec) + ':' +
+                    (ms < 10 ? '0' + ms : ms);
+
+                // Stop the stopwatch after 60 seconds
+                if (min < 1 && sec < 60) {
+                    start(true); // Keep the stopwatch running if under 60 seconds
+                } else {
+                    pause(); // Stop the stopwatch after 60 seconds
+                }
+            }, 10);
+        }
+    }
+
+    function pause() {
+        clearTimeout(timeoutId);
+        startBtn.disabled = false;
+    }
+
+    function reset() {
+        clearTimeout(timeoutId);
+        ms = 0;
+        sec = 0;
+        min = 0;
+        stopwatch.innerHTML = '00:00:00';
+        startBtn.disabled = false;
+    }
+
+
+
+</script>
+
+</html>

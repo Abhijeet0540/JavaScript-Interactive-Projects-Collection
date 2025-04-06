@@ -1,0 +1,23 @@
+let  x = 3.14159;
+let  y = 2;
+ 
+x = Math.round(x);
+x = Math.floor(x);
+x = Math.ceil(x);
+x = Math.sqrt(x);
+x = Math.pow(x,y);
+x = Math.abs(x);
+x = Math.sin(x);
+x = Math.cos(x);
+x = Math.tan(x);
+x = Math.min(x,y);
+x = Math.max(x,y);
+x = Math.random();
+x = Math.trunc(x);
+x = Math.sign(x);
+x = Math.PI;
+x = Math.E;
+x = Math.LN2;
+x = Math.LN10;
+x = Math.LOG2E;
+console.log(typeof x);

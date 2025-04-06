@@ -1,0 +1,23 @@
+/* seccond task2 */
+div{
+    text-align: center;
+    margin: auto auto;
+}
+.work {
+    font-size: 20px;
+    border-radius: 20px;
+    padding: 28px;
+    margin: 50px;
+}
+.gray {
+    background-color: gray;
+}
+.yellow {
+    background-color: yellow;   
+}
+.blue { 
+    background-color: blue; 
+}
+.green {
+    background-color: green;
+}

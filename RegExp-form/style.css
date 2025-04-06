@@ -1,0 +1,192 @@
+body {
+    background-image: url(unsplash.jpg);
+    background-size: cover;
+    margin: 50px 0;
+    text-align: center;
+    cursor: pointer;
+    
+}
+body::after {
+    content: "";
+    background-color: rgba(0, 0, 0, 0.5);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+.bg{
+    float: left;
+}
+.form{
+    padding: 30px 0;
+    border: 1px solid #484E53;
+    box-shadow: #484E53 12px 23px 17px;
+    border-radius: 7px;
+    text-align: -webkit-center;
+}
+.centered {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: -webkit-center;
+}
+.InputStyle,#phone,.city {
+    border-radius: 25px;
+    border: solid 1px white;
+    background: transparent;
+    width: 50%;
+    text-align: start;
+    padding: 10px 15px;
+}
+div#city {
+    padding: 7px;
+}
+select#citselect {
+    background: transparent;
+    padding: 1px;
+    margin: 0;
+    border: 1px solid transparent;
+    padding: 0px 180px 0 0;
+    color: white;
+    font-size: small;
+}
+option {
+    color: black;
+}
+select#citselect:focus {
+    outline: 0;
+}
+#submitbtn,#clearbtn{
+    background: transparent;
+    color: #fff;
+    padding: 10px;
+    border: 1px solid #495156;
+    border-radius: 13px;
+    box-shadow: 2px 14px 30px #495156;
+}
+input,input::-webkit-input-placeholder {
+    font-size: 12px;
+    color: white;
+}
+label#genderlabel {
+    /* font-size: small; */
+        padding: 0 223px 0px 0;
+
+}
+label#hobbylabel {
+    /* font-size: small; */
+    padding: 0 223px 0px 0;
+}
+.dancecheck{
+    padding: 0 29px 0 0;
+}
+.checkboxbtn{
+    padding: 5px;
+}
+#multiplehobby{
+    margin: 0 0 0 154px;
+}
+.label{
+    padding: 0 30px 0px 5px;
+}
+.social-btn {
+    position: absolute;
+    bottom: 20px;
+    left: 47%;
+}
+i {
+    padding: 5px;
+    color: white;
+}
+div#genderselect {
+    font-size: smaller;
+}
+div#hobbyeselect {
+    font-size: smaller;
+}
+#mainresult{
+    padding: 6px 6px;
+    float: right;
+}
+input,
+input:focus {
+    border: solid 1px white;
+    outline: 0;
+    box-shadow: nones;
+    -moz-box-shadow: none;
+    -webkit-box-shadow: none;
+}
+.secondLine {
+    font-weight: 350;
+    font-size: 15px;
+    margin-bottom: 7%;
+    color: white;
+}
+.firstLine {
+    font-size: 30px;
+    color: white;
+}
+#EmailErrortext{
+    padding: 0 163px 0 0;
+}
+#phoneErrortext{
+    padding: 0 103px 0 0;
+}
+span#cityErrortext {
+    padding: 0 165px 0 0;
+}
+span#genderErrortext {
+    padding: 0 150px 0 0;
+    font-size: 13px;
+}
+#hobbyErrortext{
+    padding: 0 80px 0 0;
+}
+tbody, td, tfoot, th, thead, tr {
+    border-color: inherit;
+    border-style: solid;
+    border-width: 1px;
+}
+td{
+    padding: 15px 0;
+}
+.table>:not(caption)>*>* {
+    padding: 0;
+}
+.delete-btn,.edit-btn {
+    border-radius: 50%;
+    margin: 2px;
+    padding: 6px 6px 6px 6px;
+    transition: 0.5s;
+}
+i.fa-pen-to-square:hover{
+    color: #002ead;
+    transition: 0.5s;
+}
+.fa-trash-can:hover{
+    color: red;
+    transition: 0.5s;
+}
+.btn-check:focus+.btn, .btn:focus {
+    outline: 0;
+    box-shadow: none;
+}
+button.btn.btn-sm.edit-btn,.fa-regular.fa-pen-to-square,.fa-trash-can,.delete-btn   {
+    padding: 0;
+}
+.hfootball,.hdance,.hwriting,.hdance,.hcricket{
+    padding: 5px
+}
+div#glabel {
+    margin: 0 93px 0 0;
+}
+@media only screen and (max-width: 600px) {
+    body{
+        width: 100%;
+        margin: 0;
+        padding: 0;
+    }
+    }

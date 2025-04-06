@@ -1,0 +1,88 @@
+body{
+    text-align: center;
+}
+.calculator {
+    width: 30%;
+    margin: 100px auto;
+    border: 1px solid rgb(203, 125, 8);
+    border-radius: 45px;
+    padding: 10px;
+    background-image: url(https://st4.depositphotos.com/13349494/22978/i/600/depositphotos_229786692-stock-photo-partial-view-male-hand-grey.jpg);
+    background-size: cover;
+    color: cornsilk;
+}
+#container{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    background: transparent;
+    color: cornsilk;
+}
+#display{
+    width: 68%;
+    height: 37px;
+    margin: 10px;
+    border: 2px solid #48403A;
+    box-shadow: #48403A 0px 0px 26px;
+    border-radius: 10px;
+    padding: 10px;
+    font-size: 25px;
+    font-weight: bold;
+    background: transparent;
+    color: cornsilk;
+}
+.btn{
+    width: 100%;
+}
+#clear{
+    width: 14%;
+    height: 60px;
+    margin: 10px;
+    border: 1px solid rgb(203, 125, 8);
+    border-radius: 10px;
+    padding: 10px;
+    font-size: 30px;
+    font-weight: bold;
+    background: transparent;
+    color: cornsilk;
+}
+#add,#sub,#mul{
+    width: 14%;
+    height: 60px;
+    margin: 10px;
+    font-size: 40px;
+    border: 1px solid rgb(203, 125, 8);
+    border-radius: 10px;
+    background: transparent;
+    color: cornsilk;
+}
+#result{
+    margin: 10px;
+    font-size: 25px;
+    font-weight: bold;
+    width: 10%;
+    line-height: 2.3;
+    height: 60px;
+    padding: 10px;
+    border: 1px solid rgb(203, 125, 8);
+    border-radius: 10px;
+    background: transparent;
+    color: cornsilk;
+}
+#num{
+    width: 40%;
+    margin: 0 auto;
+}
+#one,#two,#three,#four,#five,#six,#seven,#eight,#nine,#zero,#dot,#total{
+        width: 27%;
+    height: 60px;
+    margin: 10px;
+    font-size: 40px;
+    border: 1px solid #48403A;
+    border-radius: 35px;
+    background: transparent;
+    color: cornsilk;
+} 
+

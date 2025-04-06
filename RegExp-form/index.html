@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+        integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>user information</title>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.12.4/dist/sweetalert2.all.min.js"></script>
+    <link rel="icon" href="https://cdn-icons-png.freepik.com/256/5323/5323360.png?semt=ais_hybrid"
+        type="image/x-icon" />
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="row w-100 ">
+            <div class="col-md-6 bg text-align-start">
+                <div class="form" id="form">
+                    <h1 class="firstLine"> PERSONAL INFORMATION</h1>
+                    <h2 class="secondLine">FORM </h2>
+                    <div class="mb-2">
+                        <input class="InputStyle" id="email" type="text" placeholder="Enter Your Email" required><br>
+                        <span id="EmailErrortext"></span>
+                    </div>
+                    <div class="phone text-white mb-2">
+                        <input id="phone" type="text" placeholder="Enter Your Phone Number" required><br>
+                        <span id="phoneErrortext"></span>
+                    </div>
+                    <div class="city mb-2" id="city">
+                        <select name="city" id="citselect" class="" required>
+                            <option value="" id="select">Select City</option>
+                            <option value="Pune">Pune</option>
+                            <option value="Mumbai">Mumbai</option>
+                            <option value="Delhi">Delhi</option>
+                            <option value="Banglore">Banglore</option>
+                            <option value="Kolkata">Kolkata</option>
+                            <option value="Hyderabad">Hyderabad</option>
+                            <option value="Chennai">Chennai</option>
+                            <option value="Ahmedabad">Ahmedabad</option>
+                        </select>
+                    </div>
+                    <span id="cityErrortext"></span>
+                    <div id="genderselect" class="mb-2 text-white">
+                        <label class="pl-3 Pr-2" id="genderlabel">Gender </label><br>
+                        <div class="d-flex justify-content-center align-items-center" id="glabel">
+                            <input id="male" name="gender" type="radio" value="Male" class="radiobtn form-check-input">
+                            <label for="male" class="label">Male</label>
+                            <input id="female" name="gender" type="radio" value="Female"
+                                class="radiobtn form-check-input">
+                            <label for="female" class="label">Female</label><br>
+                        </div>
+                        <span id="genderErrortext"></span>
+                    </div>
+                    <div class="mb-2">
+                        <div class="hobby w-100 text-white" id="hobbyeselect">
+                            <label id="hobbylabel" class="text-white">Hobbies </label><br>
+                            <div class="d-flex justify-content-center align-items-center">
+                                <input name="hobbies" value="Cricket" type="checkbox" id="cricket"
+                                    class=" radiobtn form-check-input">
+                                <label for="cricket" class="hcricket">Cricket</label>
+                                <input name="hobbies" value="Football" type="checkbox" id="football"
+                                    class="radiobtn form-check-input">
+                                <label for="football" class="hfootball">Football</label>
+                                <input name="hobbies" value="Dance" type="checkbox" id="dance"
+                                    class="radiobtn form-check-input">
+                                <label for="dance" class="hdance">Dance</label>
+                                <input name="hobbies" value="writing" type="checkbox" id="writing"
+                                    class="radiobtn form-check-input">
+                                <label for="writing" class="hwriting">Writing</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <span id="hobbyErrortext"></span>
+                    </div><br>
+                    <button id="submitbtn" class="btn text-white mb-3">Submit</button>
+                    <button id="clearbtn" class="btn text-white mb-3">Clear</button>
+                </div>
+            </div>
+            <div class="col-md-6 text-white" id="mainresult">
+                <h2 class="secondLine"> USER INFORMATION</h2>
+                <div class=" align-items-center">
+                    <div>
+                        <table class="table text-white" id="formtable">
+                            <thead>
+                                <tr>
+                                    <th>Sr.No</th>
+                                    <th>Email</th>
+                                    <th>Phone</th>
+                                    <th>City</th>
+                                    <th>Gender</th>
+                                    <th>Hobbies</th>
+                                    <th>Action</th>
+                                </tr>
+                            </thead>
+                            <tbody id="formresult">
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="social-btn">
+            <a href="#" title="Facebook"><i class="fa-brands fa-facebook"></i></a>
+            <a href="#" title="Twitter"><i class="fa-brands fa-twitter"></i></a>
+            <a href="#" title="Instagram"><i class="fa-brands fa-instagram"></i></a>
+        </div>
+    </div>
+    <script src="new.js"></script>
+</body>
+
+</html>

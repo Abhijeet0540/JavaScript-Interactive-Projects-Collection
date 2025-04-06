@@ -1,0 +1,209 @@
+body {
+    background-color: #242D34;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    font-family: 'poppins', sans-serif;
+    /* background-image: url(/image/x-logo-png-twitter-0.jpg);  */
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    object-fit: cover;
+    text-align: center;
+}
+#signin{
+    background-color: #000;
+    padding: 30px 109px;
+    border-radius: 10px;
+    text-align: center;
+    width: 100%;
+    max-width: 38.5%;
+    border: 1px solid #2f3336;
+}
+#close{
+    font-size: 25px;
+}
+.btn-custom {
+    width: 100%;
+    margin-bottom: 15px;
+    border-radius: 50px;
+    font-weight: bold;
+    padding: 10px;
+}
+.btn-google,
+.btn-apple {
+    background-color: white;
+    color: black;
+}
+
+.divider {
+    margin: 20px 0;
+    font-weight: bold;
+    color: #2f3336;
+}
+.close-icon {
+    position: absolute;
+    top: 6%;
+    left: 31.9%;
+    font-size: 18px;
+    color: #fff;
+    cursor: pointer;
+    z-index: 1;
+}
+a {
+    color: #1DA1F2;
+    text-decoration: none;
+}
+a:hover {
+    text-decoration: underline;
+}
+input::placeholder {
+    background-color: #000;
+    opacity: 1;
+}
+.form-control:focus {
+    background-color: #000;
+    color: #fff;
+}
+.form-control {
+    background-color: #000;
+    border: 1px solid #2f3336;
+    color: #fff;
+    height: 58px;
+}
+#error {
+    background-color: #1DA1F2;
+    border: 1px solid #1DA1F2;
+    border-radius: 7px;
+    padding: 10px; 
+    margin: 10px;
+    color: #fff;
+    position: absolute;
+    left: 40%;
+    top: 0%;
+    }
+#user,#pass{
+    font-size: 18px;
+    font-weight:inherit;
+    text-align: center;
+}
+
+/* Checkmark Animation */
+.checkmark-container {
+    background-color: white;
+    padding: 20px 50px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    max-width: 400px;
+    width: 100%;
+}
+.checkmark {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    border: 5px solid #000;
+    position: relative;
+    animation: checkmark-circle 1s ease-in-out forwards;
+}
+.checkmark-ring {
+    width: 100px;
+    height: 100px;
+}
+.checkmark {
+    width: 50px;
+    height: 100%;
+    stroke-width: 5;
+    stroke: black;
+    animation: ring-animation 0.5s ease-in-out forwards;
+}
+.ring {
+    stroke-width: 0;
+    stroke: black;
+    stroke-dasharray: 157;
+    stroke-dashoffset: 157;
+    animation: ring-draw 1s ease-in-out forwards;
+}
+
+.check {
+    stroke-width: 5;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    stroke-dasharray: 50;
+    stroke-dashoffset: 50;
+    animation: check-draw 0.5s ease-in-out forwards 1s;
+}
+
+/* Ring Animation */
+@keyframes ring-draw {
+    to {
+        stroke-dashoffset: 0;
+    }
+}
+
+/* Checkmark Animation */
+@keyframes check-draw {
+    to {
+        stroke-dashoffset: 0;
+    }
+}
+
+@keyframes ring-animation {
+    from {
+        transform: scale(0);
+    }
+
+    to {
+        transform: scale(1);
+    }
+}
+
+@keyframes checkmark-circle {
+    0% {
+        transform: scale(0);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+@keyframes checkmark-stem {
+    0% {
+        opacity: 0;
+        transform: rotate(45deg) scaleY(0);
+    }
+
+    100% {
+        opacity: 0;
+        transform: rotate(45deg) scaleY(1);
+    }
+}
+
+@keyframes checkmark-kick {
+    0% {
+        opacity: 0;
+        transform: rotate(-45deg) scaleY(0);
+    }
+
+    100% {
+        opacity: 1;
+        transform: rotate(-45deg) scaleY(1);
+    }
+}
+
+.message {
+    margin-top: 20px;
+}
+
+.message h1 {
+    font-size: 24px;
+    margin: 0;
+}
+
+.message p {
+    font-size: 16px;
+    margin: 5px 0 0;
+}

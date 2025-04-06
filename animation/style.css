@@ -1,0 +1,26 @@
+html{
+    height: 100%;
+}
+body{
+    background-color: #0d3434;
+    background: webkit-gradient(liner,0% 0%,0% 100%,from(#0d3434),to(#0d3434));
+    background: -moz-linear-gradient(top ,(#0d3434) 0%,(#0d3434) 100%);
+    overflow: hidden;
+}
+.drop{
+    background: webkit-gradient(liner,0% 0%,0% 100%,from(#0d3434),to(#0d3434));
+    background: -moz-linear-gradient(top ,(#0d3434) 0%,(#0d3434) 100%);
+    width: 1px;
+    height: 89px;
+    position: absolute;
+    bottom: 200px;
+    -webkit-animation: fall 5s infinite linear;
+    -moz-animation: fall 5s infinite linear;
+}
+@-webkit-keyframes fall{
+    to{margin-top: 900px;}
+}
+@-moz-keyframes fall{
+    to{margin-top: 900px;}
+}
+
