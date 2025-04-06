@@ -38,7 +38,7 @@ Secure one-time password generator with validation.
 - Input validation
 - Success/Error handling
 
-### 4. Box Color Changer
+### 4. Interactive Color Generato
 Interactive color manipulation tool.
 - Dynamic color changes
 - Event handling

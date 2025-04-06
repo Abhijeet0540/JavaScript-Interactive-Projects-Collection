@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Color Generator</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="back-button.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+    <a href="../index.html" class="back-button">Back to Main</a>
+
+    <div class="container">
+        <header>
+            <h1>Interactive Color Generator</h1>
+            <p>Create, explore, and save beautiful colors for your next project</p>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="#colors" class="active">Colors</a></li>
+                    <li><a href="#gradients">Gradients</a></li>
+                    <li><a href="#shades">Color Shades</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <div class="main-content">
+            <div class="color-display">
+                <div id="center">
+                    <span id="color-code">#FFFFFF</span>
+                </div>
+
+                <div class="color-info">
+                    <div class="color-values">
+                        <div class="value-group">
+                            <label>HEX</label>
+                            <input type="text" id="hex-value" value="#FFFFFF" readonly>
+                            <button class="copy-btn" data-target="hex-value"><i class="fas fa-copy"></i></button>
+                        </div>
+                        <div class="value-group">
+                            <label>RGB</label>
+                            <input type="text" id="rgb-value" value="rgb(255, 255, 255)" readonly>
+                            <button class="copy-btn" data-target="rgb-value"><i class="fas fa-copy"></i></button>
+                        </div>
+                        <div class="value-group">
+                            <label>HSL</label>
+                            <input type="text" id="hsl-value" value="hsl(0, 0%, 100%)" readonly>
+                            <button class="copy-btn" data-target="hsl-value"><i class="fas fa-copy"></i></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="controls-section">
+                <div class="controls">
+                    <button id="random-btn"><i class="fas fa-random"></i> Random Color</button>
+                    <button id="reset-btn"><i class="fas fa-undo"></i> Reset</button>
+                    <button id="save-btn"><i class="fas fa-heart"></i> Save Color</button>
+                    <button id="generate-palette-btn"><i class="fas fa-palette"></i> Generate Palette</button>
+                </div>
+
+                <div class="sliders">
+                    <div class="slider-group">
+                        <label>Red (R)</label>
+                        <input type="range" id="red-slider" min="0" max="255" value="255">
+                        <span id="red-value">255</span>
+                    </div>
+                    <div class="slider-group">
+                        <label>Green (G)</label>
+                        <input type="range" id="green-slider" min="0" max="255" value="255">
+                        <span id="green-value">255</span>
+                    </div>
+                    <div class="slider-group">
+                        <label>Blue (B)</label>
+                        <input type="range" id="blue-slider" min="0" max="255" value="255">
+                        <span id="blue-value">255</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="palette-section">
+            <h2>Color Palette</h2>
+            <div class="palette-types">
+                <button class="palette-type-btn active" data-type="monochromatic">Monochromatic</button>
+                <button class="palette-type-btn" data-type="analogous">Analogous</button>
+                <button class="palette-type-btn" data-type="complementary">Complementary</button>
+                <button class="palette-type-btn" data-type="triadic">Triadic</button>
+                <button class="palette-type-btn" data-type="tetradic">Tetradic</button>
+            </div>
+            <div id="color-palette" class="color-palette">
+                <!-- Color palette will be generated here -->
+            </div>
+        </div>
+
+        <div class="saved-colors-section">
+            <h2>Saved Colors</h2>
+            <div id="saved-colors" class="saved-colors">
+                <!-- Saved colors will appear here -->
+                <p class="empty-message">No saved colors yet. Click the heart icon to save colors you like.</p>
+            </div>
+        </div>
+
+        <section id="colors" class="section-container active-section">
+            <div class="color-library">
+                <h2>Color Library</h2>
+                <div class="color-selection-tabs">
+                    <div class="tab-buttons">
+                        <button class="tab-btn active" data-tab="categories">Color Categories</button>
+                        <button class="tab-btn" data-tab="themes">Color Themes</button>
+                    </div>
+
+                    <div class="tab-content active" id="categories-tab">
+                        <div class="color-categories">
+                            <button class="category-btn active" data-category="all">All Colors</button>
+                            <button class="category-btn" data-category="red">Red</button>
+                            <button class="category-btn" data-category="orange">Orange</button>
+                            <button class="category-btn" data-category="yellow">Yellow</button>
+                            <button class="category-btn" data-category="green">Green</button>
+                            <button class="category-btn" data-category="blue">Blue</button>
+                            <button class="category-btn" data-category="purple">Purple</button>
+                            <button class="category-btn" data-category="pink">Pink</button>
+                            <button class="category-btn" data-category="brown">Brown</button>
+                            <button class="category-btn" data-category="gray">Gray</button>
+                        </div>
+                    </div>
+
+                    <div class="tab-content" id="themes-tab">
+                        <div class="theme-tags">
+                            <div class="tags-container">
+                                <button class="tag-btn" data-theme="pastel">Pastel</button>
+                                <button class="tag-btn" data-theme="vintage">Vintage</button>
+                                <button class="tag-btn" data-theme="retro">Retro</button>
+                                <button class="tag-btn" data-theme="neon">Neon</button>
+                                <button class="tag-btn" data-theme="gold">Gold</button>
+                                <button class="tag-btn" data-theme="light">Light</button>
+                                <button class="tag-btn" data-theme="dark">Dark</button>
+                                <button class="tag-btn" data-theme="warm">Warm</button>
+                                <button class="tag-btn" data-theme="cold">Cold</button>
+                                <button class="tag-btn" data-theme="summer">Summer</button>
+                                <button class="tag-btn" data-theme="fall">Fall</button>
+                                <button class="tag-btn" data-theme="winter">Winter</button>
+                                <button class="tag-btn" data-theme="spring">Spring</button>
+                                <button class="tag-btn" data-theme="happy">Happy</button>
+                                <button class="tag-btn" data-theme="nature">Nature</button>
+                                <button class="tag-btn" data-theme="earth">Earth</button>
+                                <button class="tag-btn" data-theme="night">Night</button>
+                                <button class="tag-btn" data-theme="space">Space</button>
+                                <button class="tag-btn" data-theme="rainbow">Rainbow</button>
+                                <button class="tag-btn" data-theme="sunset">Sunset</button>
+                                <button class="tag-btn" data-theme="sky">Sky</button>
+                                <button class="tag-btn" data-theme="sea">Sea</button>
+                                <button class="tag-btn" data-theme="kids">Kids</button>
+                                <button class="tag-btn" data-theme="skin">Skin</button>
+                                <button class="tag-btn" data-theme="food">Food</button>
+                                <button class="tag-btn" data-theme="cream">Cream</button>
+                                <button class="tag-btn" data-theme="coffee">Coffee</button>
+                                <button class="tag-btn" data-theme="wedding">Wedding</button>
+                                <button class="tag-btn" data-theme="christmas">Christmas</button>
+                                <button class="tag-btn" data-theme="halloween">Halloween</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="color-grid" class="color-grid">
+                    <!-- Color grid will be generated here -->
+                </div>
+            </div>
+        </section>
+
+        <section id="gradients" class="section-container">
+            <h2
+                class="text-3xl font-bold mb-6 text-center bg-gradient-to-r from-blue-500 to-purple-600 text-transparent bg-clip-text">
+                Gradient Generator</h2>
+            <div class="gradient-creator bg-gray-900 rounded-2xl p-6 shadow-2xl border border-gray-800">
+                <!-- Full Width Preview Container -->
+                <div class="w-full mb-12">
+                    <div class="gradient-preview h-64 md:h-80 w-full rounded-xl shadow-lg" id="gradient-preview">
+                        <span
+                            class="gradient-code bg-black/70 backdrop-blur-md text-white px-6 py-3 rounded-full font-mono text-sm"
+                            id="gradient-code">linear-gradient(to right, #3498db, #e74c3c)</span>
+                        <button id="copy-gradient"
+                            class="copy-gradient-btn bg-white/10 hover:bg-white/20 backdrop-blur-sm text-white px-5 py-3 rounded-full transition-all duration-300 hover:shadow-lg hover:-translate-y-1 border border-white/20">
+                            <i class="fas fa-copy mr-2"></i> Copy CSS
+                        </button>
+                    </div>
+
+                    <div class="gradient-actions flex flex-wrap gap-6 mt-6">
+                        <button id="save-gradient"
+                            class="action-btn flex-1 bg-gradient-to-r from-pink-500 to-rose-500 text-white py-3 px-6 rounded-xl font-medium transition-all duration-300 hover:shadow-lg hover:-translate-y-1 flex items-center justify-center gap-2">
+                            <i class="fas fa-heart"></i> Save Gradient
+                        </button>
+                        <button id="random-gradient"
+                            class="action-btn flex-1 bg-gradient-to-r from-indigo-500 to-purple-600 text-white py-3 px-6 rounded-xl font-medium transition-all duration-300 hover:shadow-lg hover:-translate-y-1 flex items-center justify-center gap-2">
+                            <i class="fas fa-random"></i> Random Gradient
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Controls Container Below -->
+                <div class="gradient-controls-container w-full">
+                    <div
+                        class="gradient-controls bg-gray-800/80 backdrop-blur-md rounded-xl p-8 border border-gray-700 shadow-lg">
+                        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                            <!-- Gradient Type -->
+                            <div
+                                class="gradient-type bg-gray-900/80 rounded-lg p-5 border border-gray-800 shadow-inner">
+                                <h3
+                                    class="text-gray-400 text-sm font-semibold uppercase tracking-wider mb-4 flex items-center">
+                                    <span
+                                        class="w-1 h-5 bg-gradient-to-b from-blue-500 to-purple-600 rounded mr-2"></span>
+                                    Gradient Type
+                                </h3>
+                                <div class="gradient-type-options flex flex-wrap gap-5 justify-center">
+                                    <button
+                                        class="gradient-type-btn active bg-gradient-to-r from-blue-500 to-blue-600 text-white px-6 py-3 rounded-lg font-medium transition-all duration-300 hover:shadow-lg hover:-translate-y-1 min-w-[100px]"
+                                        data-type="linear">Linear</button>
+                                    <button
+                                        class="gradient-type-btn bg-gray-800 text-gray-300 px-6 py-3 rounded-lg font-medium transition-all duration-300 hover:shadow-lg hover:-translate-y-1 min-w-[100px]"
+                                        data-type="radial">Radial</button>
+                                    <button
+                                        class="gradient-type-btn bg-gray-800 text-gray-300 px-6 py-3 rounded-lg font-medium transition-all duration-300 hover:shadow-lg hover:-translate-y-1 min-w-[100px]"
+                                        data-type="conic">Conic</button>
+                                </div>
+                            </div>
+
+                            <!-- Direction -->
+                            <div class="linear-direction bg-gray-900/80 rounded-lg p-5 border border-gray-800 shadow-inner"
+                                id="linear-direction-controls">
+                                <h4
+                                    class="text-gray-400 text-sm font-semibold uppercase tracking-wider mb-4 flex items-center">
+                                    <span
+                                        class="w-1 h-5 bg-gradient-to-b from-blue-500 to-purple-600 rounded mr-2"></span>
+                                    Direction
+                                </h4>
+                                <div class="direction-options grid grid-cols-4 gap-2">
+                                    <button
+                                        class="direction-btn w-10 h-10 flex items-center justify-center bg-gray-800 text-gray-300 rounded-lg transition-all duration-300 hover:bg-blue-500 hover:text-white"
+                                        data-direction="to right">→</button>
+                                    <button
+                                        class="direction-btn w-10 h-10 flex items-center justify-center bg-gray-800 text-gray-300 rounded-lg transition-all duration-300 hover:bg-blue-500 hover:text-white"
+                                        data-direction="to bottom right">↘</button>
+                                    <button
+                                        class="direction-btn w-10 h-10 flex items-center justify-center bg-gray-800 text-gray-300 rounded-lg transition-all duration-300 hover:bg-blue-500 hover:text-white"
+                                        data-direction="to bottom">↓</button>
+                                    <button
+                                        class="direction-btn w-10 h-10 flex items-center justify-center bg-gray-800 text-gray-300 rounded-lg transition-all duration-300 hover:bg-blue-500 hover:text-white"
+                                        data-direction="to bottom left">↙</button>
+                                    <button
+                                        class="direction-btn active w-10 h-10 flex items-center justify-center bg-blue-500 text-white rounded-lg transition-all duration-300"
+                                        data-direction="to left">←</button>
+                                    <button
+                                        class="direction-btn w-10 h-10 flex items-center justify-center bg-gray-800 text-gray-300 rounded-lg transition-all duration-300 hover:bg-blue-500 hover:text-white"
+                                        data-direction="to top left">↖</button>
+                                    <button
+                                        class="direction-btn w-10 h-10 flex items-center justify-center bg-gray-800 text-gray-300 rounded-lg transition-all duration-300 hover:bg-blue-500 hover:text-white"
+                                        data-direction="to top">↑</button>
+                                    <button
+                                        class="direction-btn w-10 h-10 flex items-center justify-center bg-gray-800 text-gray-300 rounded-lg transition-all duration-300 hover:bg-blue-500 hover:text-white"
+                                        data-direction="to top right">↗</button>
+                                </div>
+                            </div>
+
+                            <!-- Colors -->
+                            <div
+                                class="gradient-colors bg-gray-900/80 rounded-lg p-5 border border-gray-800 shadow-inner">
+                                <h3
+                                    class="text-gray-400 text-sm font-semibold uppercase tracking-wider mb-4 flex items-center">
+                                    <span
+                                        class="w-1 h-5 bg-gradient-to-b from-blue-500 to-purple-600 rounded mr-2"></span>
+                                    Colors
+                                </h3>
+                                <div class="color-stops space-y-3 bg-gray-800/50 p-3 rounded-lg mb-4" id="color-stops">
+                                    <div
+                                        class="color-stop flex items-center gap-3 bg-gray-800 p-3 rounded-lg transition-all duration-300 hover:shadow-md hover:-translate-y-0.5">
+                                        <div class="flex flex-col items-center gap-1">
+                                            <input type="color" value="#3498db"
+                                                class="color-stop-input w-10 h-10 rounded-md cursor-pointer">
+                                            <span class="text-xs text-blue-400 font-mono">#3498db</span>
+                                        </div>
+                                        <input type="number" value="0" min="0" max="100"
+                                            class="color-stop-position w-14 bg-gray-900 text-white px-2 py-1 rounded-md">
+                                        <span class="text-gray-400">%</span>
+                                        <button
+                                            class="remove-stop ml-auto bg-red-500/20 hover:bg-red-500 text-red-500 hover:text-white w-7 h-7 rounded-full flex items-center justify-center transition-all duration-300">
+                                            <i class="fas fa-times"></i>
+                                        </button>
+                                    </div>
+                                    <div
+                                        class="color-stop flex items-center gap-3 bg-gray-800 p-3 rounded-lg transition-all duration-300 hover:shadow-md hover:-translate-y-0.5">
+                                        <div class="flex flex-col items-center gap-1">
+                                            <input type="color" value="#e74c3c"
+                                                class="color-stop-input w-10 h-10 rounded-md cursor-pointer">
+                                            <span class="text-xs text-red-400 font-mono">#e74c3c</span>
+                                        </div>
+                                        <input type="number" value="100" min="0" max="100"
+                                            class="color-stop-position w-14 bg-gray-900 text-white px-2 py-1 rounded-md">
+                                        <span class="text-gray-400">%</span>
+                                        <button
+                                            class="remove-stop ml-auto bg-red-500/20 hover:bg-red-500 text-red-500 hover:text-white w-7 h-7 rounded-full flex items-center justify-center transition-all duration-300">
+                                            <i class="fas fa-times"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                                <button id="add-color-stop"
+                                    class="add-stop-btn bg-gradient-to-r from-green-500 to-emerald-600 text-white py-2 px-4 rounded-lg font-medium transition-all duration-300 hover:shadow-lg hover:-translate-y-1 flex items-center justify-center gap-2 mx-auto w-auto">
+                                    <i class="fas fa-plus"></i> Add Color
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="shades" class="section-container">
+            <h2>Color Shades Generator</h2>
+            <div class="shade-generator">
+                <div class="shade-input">
+                    <div class="shade-color-picker">
+                        <input type="color" id="shade-base-color" value="#3498db">
+                        <label for="shade-base-color">Pick a Color</label>
+                    </div>
+                    <div class="shade-text-input">
+                        <input type="text" id="shade-hex-input" value="#3498db" placeholder="Enter HEX color">
+                        <label for="shade-hex-input">Or Enter HEX Code</label>
+                    </div>
+                    <button id="generate-shades-btn"><i class="fas fa-palette"></i> Generate Shades</button>
+                </div>
+
+                <div class="shade-options">
+                    <div class="shade-type">
+                        <h3>Shade Type</h3>
+                        <div class="shade-type-options">
+                            <button class="shade-type-btn active" data-type="monochromatic">Monochromatic</button>
+                            <button class="shade-type-btn" data-type="tints">Tints</button>
+                            <button class="shade-type-btn" data-type="shades">Shades</button>
+                        </div>
+                    </div>
+                    <div class="shade-count">
+                        <h3>Number of Shades</h3>
+                        <input type="range" id="shade-count-slider" min="3" max="10" value="5">
+                        <span id="shade-count-value">5</span>
+                    </div>
+                </div>
+
+                <div class="shade-results" id="shade-results">
+                    <!-- Shades will be generated here -->
+                </div>
+
+                <div class="shade-actions">
+                    <button id="copy-all-shades" class="action-btn"><i class="fas fa-copy"></i> Copy All Colors</button>
+                    <button id="save-all-shades" class="action-btn"><i class="fas fa-heart"></i> Save All
+                        Shades</button>
+                </div>
+            </div>
+        </section>
+
+    </div>
+
+    <div id="toast" class="toast">Copied to clipboard!</div>
+
+    <script src="index.js"></script>
+</body>
+
+</html>

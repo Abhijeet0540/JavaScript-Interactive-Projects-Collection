@@ -1,0 +1,36 @@
+.back-button {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    display: inline-block;
+    padding: 12px 24px;
+    background-color: var(--caribbean-green);
+    color: white;
+    text-decoration: none;
+    border-radius: 30px;
+    font-weight: 600;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    z-index: 1000;
+    border: none;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.back-button::before {
+    content: '←';
+    font-size: 18px;
+    margin-right: 5px;
+}
+
+.back-button:hover {
+    background-color: var(--mountain-meadow);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+    transform: translateY(-2px);
+}
+
+.back-button:active {
+    transform: translateY(0);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
